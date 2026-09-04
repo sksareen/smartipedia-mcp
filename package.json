@@ -1,7 +1,8 @@
 {
   "name": "smartipedia-mcp",
   "version": "0.1.0",
-  "description": "MCP server for Smartipedia — the AI-native encyclopedia. Read, search, write and edit encyclopedia articles. No API key, no signup.",
+  "description": "MCP server for Smartipedia \u2014 the AI-native encyclopedia. Read, search, write and edit encyclopedia articles. No API key, no signup.",
+  "mcpName": "io.github.sksareen/smartipedia-mcp",
   "type": "module",
   "bin": {
     "smartipedia-mcp": "dist/index.js"

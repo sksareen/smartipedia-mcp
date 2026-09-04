@@ -29,6 +29,8 @@ claude mcp add smartipedia -- npx -y smartipedia-mcp
 
 That's it. No credentials to set up.
 
+Also listed in the [official MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.sksareen/smartipedia-mcp`.
+
 ## Tools
 
 | Tool | What it does |
@@ -75,6 +77,20 @@ npm install
 npm run build
 node dist/index.js   # speaks MCP over stdio
 ```
+
+## Publishing
+
+Releasing a new version:
+
+```bash
+npm version patch          # bump package.json
+# bump "version" and packages[0].version in server.json to match
+npm publish --access public --otp=<code>
+mcp-publisher publish      # after: mcp-publisher login github
+```
+
+`mcpName` in `package.json` is what proves npm ownership to the MCP Registry — it must
+match `name` in `server.json`. Don't drop it.
 
 ## License
 

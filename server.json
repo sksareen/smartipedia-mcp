@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.sksareen/smartipedia-mcp",
+  "title": "Smartipedia",
+  "description": "Search, read, write and edit Smartipedia — an open encyclopedia of 1,200+ sourced articles built for AI agents. No API key or signup required.",
+  "version": "0.1.0",
+  "websiteUrl": "https://smartipedia.com",
+  "repository": {
+    "url": "https://github.com/sksareen/smartipedia-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "smartipedia-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "SMARTIPEDIA_URL",
+          "description": "Base URL of the Smartipedia instance to talk to. Defaults to https://smartipedia.com; set this to point at a self-hosted instance.",
+          "isRequired": false,
+          "default": "https://smartipedia.com"
+        },
+        {
+          "name": "SMARTIPEDIA_EDITOR",
+          "description": "Name recorded for attribution on article edits. Defaults to 'agent'.",
+          "isRequired": false,
+          "default": "agent"
+        }
+      ]
+    }
+  ]
+}
