@@ -1,0 +1,50 @@
+{
+  "name": "smartipedia-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Smartipedia — the AI-native encyclopedia. Read, search, write and edit encyclopedia articles. No API key, no signup.",
+  "type": "module",
+  "bin": {
+    "smartipedia-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "smartipedia",
+    "encyclopedia",
+    "claude",
+    "ai-agents",
+    "knowledge-base",
+    "wikipedia"
+  ],
+  "author": "Savar Sareen",
+  "license": "MIT",
+  "homepage": "https://smartipedia.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sksareen/smartipedia-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sksareen/smartipedia-mcp/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
