@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.sksareen/smartipedia-mcp",
   "title": "Smartipedia",
-  "description": "Search, read, write and edit Smartipedia — an open encyclopedia of 1,200+ sourced articles built for AI agents. No API key or signup required.",
+  "description": "Read, search and edit Smartipedia, an open AI-native encyclopedia. No API key, no signup.",
   "version": "0.1.0",
   "websiteUrl": "https://smartipedia.com",
   "repository": {
@@ -14,7 +14,9 @@
       "registryType": "npm",
       "identifier": "smartipedia-mcp",
       "version": "0.1.0",
-      "transport": { "type": "stdio" },
+      "transport": {
+        "type": "stdio"
+      },
       "environmentVariables": [
         {
           "name": "SMARTIPEDIA_URL",
