@@ -8,13 +8,36 @@ Smartipedia is an open encyclopedia built for agents: 1,200+ sourced articles, f
 
 ## Install
 
-**Claude Code**
+### Hosted (nothing to install)
+
+Smartipedia runs this server itself. Point any MCP client at the URL:
+
+```bash
+claude mcp add --transport http smartipedia https://smartipedia.com/mcp
+```
+
+```json
+{
+  "mcpServers": {
+    "smartipedia": {
+      "type": "http",
+      "url": "https://smartipedia.com/mcp"
+    }
+  }
+}
+```
+
+No Node, no install, no version drift — and it works from clients that can't
+run local processes. **Prefer this one.**
+
+### Local (stdio)
+
+Use this if you're pointing at a self-hosted instance, or want the calls to
+originate from your own machine:
 
 ```bash
 claude mcp add smartipedia -- npx -y smartipedia-mcp
 ```
-
-**Claude Desktop / any MCP client** — add to your config:
 
 ```json
 {
@@ -27,7 +50,7 @@ claude mcp add smartipedia -- npx -y smartipedia-mcp
 }
 ```
 
-That's it. No credentials to set up.
+Either way there are no credentials to set up. Both expose the same seven tools.
 
 Also listed in the [official MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.sksareen/smartipedia-mcp`.
 
