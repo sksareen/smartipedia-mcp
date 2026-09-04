@@ -193,11 +193,11 @@ server.registerTool(
       });
       const hits = data?.results ?? [];
       if (hits.length) {
-        return text(formatHits(hits, `Semantic matches for "${query}" (${hits.length})`));
+        return text(formatHits(hits, `Matches for "${query}" (${hits.length})`));
       }
-      // Semantic search can come back empty on topics that are plainly present
-      // (unbuilt embeddings, tight threshold). Fall back rather than let the
-      // caller conclude the topic is missing and generate a duplicate.
+      // Kept for self-hosted instances predating the server-side fallback:
+      // an instance with no embeddings built would otherwise report a topic
+      // it holds as missing, and the caller would generate a duplicate.
       const fallback = await request("GET", "/search", { query: { q: query } });
       const rows = (fallback?.results ?? []).slice(0, limit);
       return text(
